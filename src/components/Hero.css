@@ -4,4 +4,11 @@
     height: 89vh;
     inset: 0;
     z-index: -1;
+    border-radius: 20px;
+}
+.content h1{
+    font-size: 3.5rem;
+}
+.content p {
+    font-weight: 500;
 }
