@@ -1,11 +1,9 @@
-import React from 'react'
-import NavbarNav from './components/NavbarNav'
-import Hero from './components/Hero'
+import Home from './pages/Home'
+
 const App = () => {
   return (
     <>
-          <NavbarNav />
-          <Hero />
+          <Home />
     </>
   )
 }
