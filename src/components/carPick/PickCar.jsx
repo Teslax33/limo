@@ -4,7 +4,7 @@ import Button from "react-bootstrap/esm/Button";
 import Container from "react-bootstrap/esm/Container";
 import { CAR_DATA } from "./CarData";
 import PickCarBox from "./PickCarBox";
-// import './PickCar.css';
+import './PickCar.css';
 
 const PickCar = () => {
   const [index, setIndex] = useState(0);
@@ -16,11 +16,11 @@ const PickCar = () => {
   }
 
   return (
-    <section className="pick-car pt-5">
+    <section className="pick-car py-5">
       <Container>
-        <div className="pick-title text-center">
+        <div className="pick-title text-center mx-auto w-50">
           <h3>Vehicle Models</h3>
-          <h2>Our rental fleet</h2>
+          <h2 className="fw-bold">Our rental fleet</h2>
           <p>
             Choose from a variety of our amazing vehicles to rent for your next
             adventure or business trip
@@ -34,7 +34,7 @@ const PickCar = () => {
                 <div className="car-pick-box d-flex flex-column gap-1 w-100">
                   <Button
                     size="lg"
-                    className={`pick-btn ${index === 0 ? 'active' : ""} `}
+                    className={`pick-btn rounded-0 fw-bold ${index === 0 ? 'active' : ""} `}
                     value={0}
                     onClick={handleClick}
                   >
@@ -42,7 +42,7 @@ const PickCar = () => {
                   </Button>
                   <Button
                     size="lg"
-                    className={`pick-btn ${index === 1 ? 'active' : ""} `}
+                    className={`pick-btn  rounded-0 fw-bold ${index === 1 ? 'active' : ""}`}
                     value={1}
                     onClick={handleClick}
                   >
@@ -50,7 +50,7 @@ const PickCar = () => {
                   </Button>
                   <Button
                     size="lg"
-                    className={`pick-btn ${index === 2 ? 'active' : ""} `}
+                    className={`pick-btn rounded-0 fw-bold ${index === 2 ? 'active' : ""} `}
                     value={2}
                     onClick={handleClick}
                   >
@@ -58,7 +58,7 @@ const PickCar = () => {
                   </Button>
                   <Button
                     size="lg"
-                    className={`pick-btn  ${index === 3 ? 'active' : ""}`}
+                    className={`pick-btn rounded-0 fw-bold ${index === 3 ? 'active' : ""}`}
                     value={3}
                     onClick={handleClick}
                   >
@@ -66,7 +66,7 @@ const PickCar = () => {
                   </Button>
                   <Button
                     size="lg"
-                    className={`pick-btn  ${index === 4 ? 'active' : ""}`}
+                    className={`pick-btn rounded-0 fw-bold ${index === 4 ? 'active' : ""}`}
                     value={4}
                     onClick={handleClick}
                   >
@@ -74,7 +74,7 @@ const PickCar = () => {
                   </Button>
                   <Button
                     size="lg"
-                    className={`pick-btn  ${index === 5 ? 'active' : ""}`}
+                    className={`pick-btn rounded-0 fw-bold ${index === 5 ? 'active' : ""}`}
                     value={5}
                     onClick={handleClick}
                   >
