@@ -1,0 +1,16 @@
+.choose-us-img-bg{
+    background-color: #9fbc70;
+}
+
+.choose-us-img-bg2{
+    background-color: #2a2a2a;
+}
+.img-wrapper{
+    max-width: 170px;
+    border-radius: 20px;
+}
+.choose-us-box-des{
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #515151;
+}
