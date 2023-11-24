@@ -1,18 +1,17 @@
-import React from 'react'
-import Hero from '../components/Hero'
-import NavbarNav from '../components/NavbarNav'
-import Service from '../components/service/Service'
-import PickCar from '../components/carPick/PickCar'
+import Hero from "../components/Hero";
+import NavbarNav from "../components/NavbarNav";
+import Service from "../components/service/Service";
+import PickCar from "../components/carPick/PickCar";
+import ChooseUs from "../components/chooseUs/ChooseUs";
 
-const Home = () => {
+export default function Home() {
   return (
     <>
-    <NavbarNav />
-        <Hero />
-        <Service />
-        <PickCar />
+      <NavbarNav />
+      <Hero />
+      <Service />
+      <PickCar />
+      <ChooseUs />
     </>
-  )
+  );
 }
-
-export default Home

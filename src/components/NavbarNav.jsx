@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-const NavbarNav = () => {
+export default function NavbarNav() {
   return (
     <Navbar expand="lg" fixed='top' className="bg-body-tertiary">
     <Container>
@@ -22,4 +22,3 @@ const NavbarNav = () => {
   )
 }
 
-export default NavbarNav

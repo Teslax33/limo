@@ -1,7 +1,7 @@
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 
-const PickCarBox = ({ data }) => {
+export default function PickCarBox({ data }) {
   return (
     <>
       {data.map((car, id) => {
@@ -70,5 +70,3 @@ const PickCarBox = ({ data }) => {
     </>
   );
 };
-
-export default PickCarBox;

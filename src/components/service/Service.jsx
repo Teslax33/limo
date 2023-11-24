@@ -1,11 +1,11 @@
 import Col from "react-bootstrap/esm/Col";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
-import ServiceCard from "./ServiceCard";
 import "./Service.css";
+import ServiceCard from "./ServiceCard";
 import { services } from "./services";
 
-const Service = () => {
+export default function Service() {
   return (
     <section className="service pt-5">
       <Container>
@@ -24,7 +24,7 @@ const Service = () => {
                 <ServiceCard
                   title={service.title}
                   description={service.description}
-                  img = {service.img}
+                  img={service.img}
                 />
               </Col>
             );
@@ -33,6 +33,4 @@ const Service = () => {
       </Container>
     </section>
   );
-};
-
-export default Service;
+}

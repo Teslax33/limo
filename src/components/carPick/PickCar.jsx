@@ -3,10 +3,10 @@ import { Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/esm/Button";
 import Container from "react-bootstrap/esm/Container";
 import { CAR_DATA } from "./CarData";
-import PickCarBox from "./PickCarBox";
 import './PickCar.css';
+import PickCarBox from "./PickCarBox";
 
-const PickCar = () => {
+export default  function PickCar() {
   const [index, setIndex] = useState(0);
 
   function handleClick(e) {
@@ -92,5 +92,3 @@ const PickCar = () => {
     </section>
   );
 };
-
-export default PickCar;
