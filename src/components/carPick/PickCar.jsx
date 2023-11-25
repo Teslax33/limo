@@ -3,10 +3,10 @@ import { Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/esm/Button";
 import Container from "react-bootstrap/esm/Container";
 import { CAR_DATA } from "./CarData";
-import './PickCar.css';
+import "./PickCar.css";
 import PickCarBox from "./PickCarBox";
 
-export default  function PickCar() {
+export default function PickCar() {
   const [index, setIndex] = useState(0);
 
   function handleClick(e) {
@@ -34,7 +34,9 @@ export default  function PickCar() {
                 <div className="car-pick-box d-flex flex-column gap-1 w-100">
                   <Button
                     size="lg"
-                    className={`pick-btn rounded-0 fw-bold ${index === 0 ? 'active' : ""} `}
+                    className={`pick-btn rounded-0 fw-bold ${
+                      index === 0 ? "active" : ""
+                    } `}
                     value={0}
                     onClick={handleClick}
                   >
@@ -42,7 +44,9 @@ export default  function PickCar() {
                   </Button>
                   <Button
                     size="lg"
-                    className={`pick-btn  rounded-0 fw-bold ${index === 1 ? 'active' : ""}`}
+                    className={`pick-btn  rounded-0 fw-bold ${
+                      index === 1 ? "active" : ""
+                    }`}
                     value={1}
                     onClick={handleClick}
                   >
@@ -50,7 +54,9 @@ export default  function PickCar() {
                   </Button>
                   <Button
                     size="lg"
-                    className={`pick-btn rounded-0 fw-bold ${index === 2 ? 'active' : ""} `}
+                    className={`pick-btn rounded-0 fw-bold ${
+                      index === 2 ? "active" : ""
+                    } `}
                     value={2}
                     onClick={handleClick}
                   >
@@ -58,7 +64,9 @@ export default  function PickCar() {
                   </Button>
                   <Button
                     size="lg"
-                    className={`pick-btn rounded-0 fw-bold ${index === 3 ? 'active' : ""}`}
+                    className={`pick-btn rounded-0 fw-bold ${
+                      index === 3 ? "active" : ""
+                    }`}
                     value={3}
                     onClick={handleClick}
                   >
@@ -66,7 +74,9 @@ export default  function PickCar() {
                   </Button>
                   <Button
                     size="lg"
-                    className={`pick-btn rounded-0 fw-bold ${index === 4 ? 'active' : ""}`}
+                    className={`pick-btn rounded-0 fw-bold ${
+                      index === 4 ? "active" : ""
+                    }`}
                     value={4}
                     onClick={handleClick}
                   >
@@ -74,7 +84,9 @@ export default  function PickCar() {
                   </Button>
                   <Button
                     size="lg"
-                    className={`pick-btn rounded-0 fw-bold ${index === 5 ? 'active' : ""}`}
+                    className={`pick-btn rounded-0 fw-bold ${
+                      index === 5 ? "active" : ""
+                    }`}
                     value={5}
                     onClick={handleClick}
                   >
@@ -91,4 +103,4 @@ export default  function PickCar() {
       </Container>
     </section>
   );
-};
+}
