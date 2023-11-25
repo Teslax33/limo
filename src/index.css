@@ -24,3 +24,16 @@
   color: black;
 }
 
+
+/* pricing section */
+
+.car-feature-list{
+  font-size: 0.9rem;
+}
+.pricing-car-img{
+  margin-top: -80px;
+}
+.pricing-main{
+  background-color: #e9e8ee;
+  border-radius: 20px;
+}
