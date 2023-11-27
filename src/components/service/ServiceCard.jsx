@@ -3,7 +3,7 @@ import "./Service.css";
 
 export default function ServiceCard({ title, description, img }) {
   return (
-    <div className="service-card d-flex gap-4 w-100 rounded px-3 py-3 align-items-center">
+    <div className="service-card d-flex gap-4 w-100 h-100 rounded px-3 py-3 align-items-center">
       <div className="service-img  mw-100">
         <img
           src={img}
