@@ -31,7 +31,7 @@ export default function Newsletter() {
       <Container>
         <div className="newsletter-container p-5">
           <Row>
-            <Col md="4">
+            <Col md="12" lg="3">
               <img src={Logo} alt="logo" style={{ maxWidth: "90px" }} />
 
               <div className="subscribe mt-5">
@@ -52,10 +52,10 @@ export default function Newsletter() {
                 </div>
               </div>
             </Col>
-            <Col>
+            <Col lg="3" sm="12">
               <NewsletterList title="Top cities" lists={topCites} />
             </Col>
-            <Col>
+            <Col lg="3">
               <NewsletterList title="Explore" lists={explore} />
             </Col>
             <Col>
@@ -64,28 +64,36 @@ export default function Newsletter() {
           </Row>
           <footer className="mt-5">
             <Row>
-              <Col md="2">
+              <Col lg="2">
                 <span>© 2023 Limos</span>
               </Col>
               <Col>
-                <div className="footer-info d-flex align-items-center justify-content-around">
-                  <div className="info d-flex gap-5 nl-text">
-                    <span>Terms</span>
-                    <span>Privacy Policy</span>
-                    <span>Legal notice</span>
-                    <span>Accesibility</span>
-                  </div>
+                <div className="footer-info">
+                  <Row>
+                    {/* terms and policy */}
+                    <Col lg="8">
+                      <div className="info d-flex gap-5 nl-text">
+                        <span>Terms</span>
+                        <span>Privacy Policy</span>
+                        <span>Legal notice</span>
+                        <span>Accesibility</span>
+                      </div>
+                    </Col>
 
-                  <div
-                    className="social-links d-flex gap-2"
-                    style={{ fontSize: "1.5rem" }}
-                  >
-                    <TiSocialYoutube />
-                    <TiSocialFacebook />
-                    <TiSocialTwitter />
-                    <FaLinkedin />
-                    <FaInstagram />
-                  </div>
+                    <Col>
+                      {/* social media section */}
+                      <div
+                        className="social-links d-flex gap-2"
+                        style={{ fontSize: "1.5rem" }}
+                      >
+                        <TiSocialYoutube />
+                        <TiSocialFacebook />
+                        <TiSocialTwitter />
+                        <FaLinkedin />
+                        <FaInstagram />
+                      </div>
+                    </Col>
+                  </Row>
                 </div>
               </Col>
             </Row>
