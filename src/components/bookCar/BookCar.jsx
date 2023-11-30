@@ -1,15 +1,42 @@
 import { Button } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
 export function BookCar() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  console.log(errors);
+  const submit = (data, e) => {
+    alert(JSON.stringify(data));
+    e.target.reset(); //Empty inuput field onSubmit
+  };
   return (
     <div
       className="book-car p-4 mt-4 align-self-end h-100 mw-100"
       style={{ backgroundColor: "#ffff", borderRadius: "20px" }}
     >
-      <h3>pick car</h3>
-      <form action="" className="d-flex flex-column gap-2">
-        <select>
-          <option>Select your car type</option>
+      <h3 className="fw-bold mb-4">Book a car</h3>
+      <form
+        onSubmit={handleSubmit(submit)}
+        className="d-flex flex-column gap-2"
+      >
+        {(errors.carType ||
+          errors.pickUp ||
+          errors.dropOff ||
+          errors.pickTime ||
+          errors.dropTime) && (
+          <span className="error-message border-1 px-2 py-1 rounded border border-white fw-bold">
+            This field is required
+          </span>
+        )}
+        <select
+          {...register("carType", { required: true })}
+          className="bookcar-inputField border-0 p-2 rounded"
+        >
+          <option value="">Select your car type</option>
           <option value="Audi A1 S-Line">Audi A1 S-Line</option>
           <option value="VW Golf 6">VW Golf 6</option>
           <option value="Toyota Camry">Toyota Camry</option>
@@ -17,22 +44,44 @@ export function BookCar() {
           <option value="Mercedes-Benz GLK">Mercedes-Benz GLK</option>
           <option value="VW Passat CC">VW Passat CC</option>
         </select>
+
+        <select
+          {...register("pickUp", { required: true })}
+          className="bookcar-inputField border-0 p-2 rounded"
+        >
+          <option value="">Select your pick up location</option>
+          <option value="Belgrade">Belgrade</option>
+          <option value="Novi Sad">Novi Sad</option>
+          <option value="Nis">Nis</option>
+          <option value="Kragujevac">Kragujevac</option>
+          <option value="Subotica">Subotica</option>
+        </select>
+
+        <select
+          {...register("dropOff", { required: true })}
+          className="bookcar-inputField border-0 p-2 rounded"
+        >
+          <option value="">Select your drop off location</option>
+          <option value="Novi Sad">Novi Sad</option>
+          <option value="Kragujevac">Kragujevac</option>
+          <option value="Nis">Nis</option>
+          <option value="Belgrade">Belgrade</option>
+          <option value="Subotica">Subotica</option>
+        </select>
+        {/* PickUp and drop off data */}
         <input
-          type="text"
-          className="rounded px-2 py-1"
-          name="pickup"
-          id=""
-          placeholder="pick up location"
+          type="date"
+          {...register("pickTime", { required: true })}
+          className="bookcar-inputField border-0 px-2 py-1"
         />
         <input
-          type="text"
-          className="rounded px-2 px-1"
-          name="dropup"
-          id=""
-          placeholder="drop off location"
+          type="date"
+          {...register("dropTime", { required: true })}
+          className="bookcar-inputField border-0 px-2 py-1"
         />
-        <input type="date" name="pickup date" id="" />
-        <Button variant="dark">Reserve</Button>
+        <Button variant="dark" type="submit">
+          Reserve
+        </Button>
       </form>
     </div>
   );
