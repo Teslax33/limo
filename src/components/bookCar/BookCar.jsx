@@ -1,5 +1,7 @@
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import BookCarModal from "./BookCarModal";
+import { useState } from "react";
 
 export function BookCar() {
   const {
@@ -8,11 +10,14 @@ export function BookCar() {
     formState: { errors },
   } = useForm();
 
-  console.log(errors);
+  const [pickUpData, setPickUpData] = useState("");
+  // console.log(errors);
   const submit = (data, e) => {
-    alert(JSON.stringify(data));
+    // alert(JSON.stringify(data));
+    setPickUpData(data);
     e.target.reset(); //Empty inuput field onSubmit
   };
+  console.log( pickUpData);
   return (
     <div
       className="book-car p-4 mt-4 align-self-end h-100 mw-100"
@@ -82,6 +87,7 @@ export function BookCar() {
         <Button variant="dark" type="submit">
           Reserve
         </Button>
+        <BookCarModal userData={pickUpData} />
       </form>
     </div>
   );
