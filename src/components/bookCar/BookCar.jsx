@@ -10,14 +10,12 @@ export function BookCar() {
     formState: { errors },
   } = useForm();
 
-  const [pickUpData, setPickUpData] = useState("");
-  // console.log(errors);
-  const submit = (data, e) => {
-    // alert(JSON.stringify(data));
+  const [pickUpData, setPickUpData] = useState({});
+  console.log(errors);
+  const onSubmit = (data, e) => {
     setPickUpData(data);
-    e.target.reset(); //Empty inuput field onSubmit
   };
-  console.log( pickUpData);
+  console.log(pickUpData);
   return (
     <div
       className="book-car p-4 mt-4 align-self-end h-100 mw-100"
@@ -25,7 +23,8 @@ export function BookCar() {
     >
       <h3 className="fw-bold mb-4">Book a car</h3>
       <form
-        onSubmit={handleSubmit(submit)}
+        key={1}
+        onSubmit={handleSubmit(onSubmit)}
         className="d-flex flex-column gap-2"
       >
         {(errors.carType ||
