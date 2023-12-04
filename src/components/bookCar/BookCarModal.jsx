@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useForm } from "react-hook-form";
+import images from "../image";
+import { CarContext } from "../../App";
 
 export default function BookCarModal({ userData }) {
   const {
@@ -11,20 +13,43 @@ export default function BookCarModal({ userData }) {
     formState: { errors: errors2 },
   } = useForm();
 
-  console.log(errors2);
-  const [show, setShow] = useState(false);
+  const { show, setShow } = useContext(CarContext);
+
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  
+
   const onSubmitInfo = (data) => {
-    alert("valid data check"); 
+    alert(JSON.stringify(data));
   };
+
+  //display based on value name show car img
+  let imgUrl;
+  switch (userData.carType) {
+    case "Audi A1 S-Line":
+      imgUrl = images[0];
+      break;
+    case "Mercedes-Benz GLK":
+      imgUrl = images[1];
+      break;
+    case "BMW 320 ModernLine":
+      imgUrl = images[2];
+      break;
+
+    case "VW Golf 6":
+      imgUrl = images[3];
+      break;
+    case "VW Passat CC":
+      imgUrl = images[4];
+      break;
+    case "Toyota Camry":
+      imgUrl = images[5];
+      break;
+
+    default:
+      imgUrl = "";
+  }
+
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Complete Reservation</Modal.Title>
@@ -69,6 +94,7 @@ export default function BookCarModal({ userData }) {
               <Col lg="6">
                 <div className="car-info">
                   <h5>{userData.carType}</h5>
+                  <img src={imgUrl} alt="car image" className="w-100" />
                 </div>
               </Col>
             </Row>
