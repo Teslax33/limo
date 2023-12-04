@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/esm/Container";
 import backgroundImg from "../assets/Images/hero-img.jpg";
 import "./Hero.css";
-import { BookCar } from "./bookCar/BookCar";
+import BookCar from "./bookCar/BookCar";
 
 export default function Hero() {
   return (
@@ -22,7 +22,6 @@ export default function Hero() {
             our range of high-end services
           </p>
           <Button variant="dark"> Open Fleet </Button>
-
           <BookCar />
         </div>
       </Container>
