@@ -1,21 +1,25 @@
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import BookCarModal from "./BookCarModal";
-import { useState } from "react";
+import {  useContext, useState } from "react";
+import { CarContext } from "../../App";
 
-export function BookCar() {
+
+export default function BookCar() {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+ const {show, setShow} = useContext(CarContext);
   const [pickUpData, setPickUpData] = useState({});
-  console.log(errors);
-  const onSubmit = (data, e) => {
+  // console.log(errors)
+  ;
+  const onSubmit = (data) => {
     setPickUpData(data);
+    setShow(true);
   };
-  console.log(pickUpData);
   return (
     <div
       className="book-car p-4 mt-4 align-self-end h-100 mw-100"
