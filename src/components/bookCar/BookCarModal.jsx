@@ -3,8 +3,9 @@ import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useForm } from "react-hook-form";
-import images from "../image";
 import { CarContext } from "../../App";
+import images from "../image";
+import "./BookCarModal.css";
 
 export default function BookCarModal({ userData }) {
   const {
@@ -52,48 +53,52 @@ export default function BookCarModal({ userData }) {
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Complete Reservation</Modal.Title>
+          <Modal.Title className="text-uppercase fw-bold">
+            Complete Reservation
+          </Modal.Title>
         </Modal.Header>
+        <div className="checkout-info-box px-4 py-2">
+          <h5 className="checkout-info-title fw-bold primary-color">
+            {" "}
+            Upon completing this reservation enquiry, you will receive:
+          </h5>
+          <p className="checkout-info-desc">
+            Your rental voucher to produce on arrival at the rental desk and a
+            toll-free customer support number.
+          </p>
+        </div>
         <Modal.Body>
-          <div className="checkout-info-box">
-            <h3 className="checkout-info-title">
-              {" "}
-              Upon completing this reservation enquiry, you will receive:::
-            </h3>
-            <p className="checkout-info-desc">
-              Your rental voucher to produce on arrival at the rental desk and a
-              toll-free customer support number.
-            </p>
-          </div>
-
           <div className="modal-body-inner">
-            <Row>
-              <Col lg="6">
+            <Row gx="3">
+              <Col lg={6}>
                 <div className="location-date-info">
-                  <h3>Location & Date</h3>
+                  <h5 className="fw-bold primary-color">Location & Date</h5>
                   <div className="info-box">
                     <div className="media-box">
-                      <h5>Pick-Up Time</h5>
+                      <h6 className="fw-bold">Pick-Up Time</h6>
                       <span>{userData.pickTime}</span>
                     </div>
                     <div className="media-box">
-                      <h5>Drop-Off Time</h5>
+                      <h6 className="fw-bold">Drop-Off Time</h6>
                       <span>{userData.dropTime}</span>
                     </div>
                     <div className="media-box">
-                      <h5>Pick-up Location</h5>
+                      <h6 className="fw-bold">Pick-up Location</h6>
                       <span>{userData.pickUp}</span>
                     </div>
                     <div className="media-box">
-                      <h5>Drop-up Location</h5>
+                      <h6 className="fw-bold">Drop-up Location</h6>
                       <span>{userData.dropOff}</span>
                     </div>
                   </div>
                 </div>
               </Col>
-              <Col lg="6">
+              <Col lg={6}>
                 <div className="car-info">
-                  <h5>{userData.carType}</h5>
+                  <h5 className="fw-bold">
+                    <span className="primary-color">Car-</span>{" "}
+                    {userData.carType}
+                  </h5>
                   <img src={imgUrl} alt="car image" className="w-100" />
                 </div>
               </Col>
@@ -102,16 +107,17 @@ export default function BookCarModal({ userData }) {
         </Modal.Body>
         <div className="checkout-personal-info py-5">
           <Container>
-            <h5>PERSONAL INFORMATION</h5>
+            <h5 className="fw-bold primary-color">PERSONAL INFORMATION</h5>
+            {/* form personal information */}
             <form key={2} onSubmit={handleSubmit2(onSubmitInfo)}>
-              <Row>
-                <Col lg="6">
+              <Row className="gy-3">
+                <Col lg={6}>
                   <label>
-                    First Name<b>*</b>
+                    First Name <b>*</b>
                   </label>
                   <input
                     type="text"
-                    className="w-100"
+                    className="w-100 px-2 py-2 bookcar-inputField border-0"
                     {...register2("firstName", {
                       required: "This field is required",
                     })}
@@ -123,16 +129,16 @@ export default function BookCarModal({ userData }) {
                     </span>
                   }
                 </Col>
-                <Col lg="6">
+                <Col lg={6}>
                   <label>
-                    Last Name<b>*</b>
+                    Last Name <b>*</b>
                   </label>
                   <input
                     type="text"
                     {...register2("lastName", {
                       required: "This field is required",
                     })}
-                    className="w-100"
+                    className="w-100 px-2 py-2 bookcar-inputField border-0"
                     placeholder="Enter your last name"
                   />
                   {
@@ -141,9 +147,9 @@ export default function BookCarModal({ userData }) {
                     </span>
                   }
                 </Col>
-                <Col lg="6">
+                <Col lg={6}>
                   <label>
-                    Phone Number<b>*</b>
+                    Phone Number <b>*</b>
                   </label>
                   <input
                     type="text"
@@ -151,7 +157,7 @@ export default function BookCarModal({ userData }) {
                       required: "This field is required",
                     })}
                     maxLength={10}
-                    className="w-100"
+                    className="w-100 px-2 py-2 bookcar-inputField border-0"
                     placeholder="Enter your phone number"
                   />
                   {
@@ -160,9 +166,9 @@ export default function BookCarModal({ userData }) {
                     </span>
                   }
                 </Col>
-                <Col lg="6">
+                <Col lg={6}>
                   <label>
-                    Age<b>*</b>
+                    Age <b>*</b>
                   </label>
                   <input
                     type="number"
@@ -172,14 +178,14 @@ export default function BookCarModal({ userData }) {
                     size="4"
                     min="18"
                     max="80"
-                    className="w-100"
+                    className="w-100 px-2 py-2 bookcar-inputField border-0"
                     placeholder="Enter your age"
                   />
                   {<span className="text-danger">{errors2.age?.message}</span>}
                 </Col>
-                <Col lg="12">
+                <Col lg={12}>
                   <label>
-                    Email<b>*</b>
+                    Email <b>*</b>
                   </label>
                   <input
                     type="email"
@@ -187,7 +193,7 @@ export default function BookCarModal({ userData }) {
                       required: "This field is required",
                     })}
                     placeholder="Enter your email address"
-                    className="w-100"
+                    className="w-100 px-2 py-2 bookcar-inputField border-0"
                   />
                   {
                     <span className="text-danger">
@@ -195,9 +201,9 @@ export default function BookCarModal({ userData }) {
                     </span>
                   }
                 </Col>
-                <Col lg="6">
+                <Col lg={6}>
                   <label>
-                    City<b>*</b>
+                    City <b>*</b>
                   </label>
                   <input
                     type="text"
@@ -205,13 +211,13 @@ export default function BookCarModal({ userData }) {
                       required: "This field is required",
                     })}
                     placeholder="Enter your city"
-                    className="w-100"
+                    className="w-100 px-2 py-2 bookcar-inputField border-0"
                   />
                   {<span className="text-danger">{errors2.city?.message}</span>}
                 </Col>
-                <Col lg="6">
+                <Col lg={6}>
                   <label>
-                    Zip Code<b>*</b>
+                    Zip Code <b>*</b>
                   </label>
                   <input
                     type="text"
@@ -219,7 +225,7 @@ export default function BookCarModal({ userData }) {
                       required: "This field is required",
                     })}
                     placeholder="Enter your Zip Code"
-                    className="w-100"
+                    className="w-100 px-2 py-2 bookcar-inputField border-0"
                   />
                   {
                     <span className="text-danger">
@@ -244,7 +250,7 @@ export default function BookCarModal({ userData }) {
                   }
                 </Col>
               </Row>
-              <Button type="submit" variant="dark">
+              <Button type="submit" variant="dark" className="mt-3">
                 Reserve now
               </Button>
             </form>
