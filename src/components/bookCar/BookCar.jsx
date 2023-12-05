@@ -1,9 +1,8 @@
-import { Button } from "react-bootstrap";
+import { useContext, useState } from "react";
+import Button from "react-bootstrap/Button";
 import { useForm } from "react-hook-form";
-import BookCarModal from "./BookCarModal";
-import {  useContext, useState } from "react";
 import { CarContext } from "../../App";
-
+import BookCarModal from "./BookCarModal";
 
 export default function BookCar() {
   const {
@@ -12,20 +11,22 @@ export default function BookCar() {
     formState: { errors },
   } = useForm();
 
- const {show, setShow} = useContext(CarContext);
+  const { setShow } = useContext(CarContext);
   const [pickUpData, setPickUpData] = useState({});
-  // console.log(errors)
-  ;
+
+  // store data validate from form and display modal
   const onSubmit = (data) => {
     setPickUpData(data);
     setShow(true);
-  };
+  }
+
   return (
     <div
       className="book-car p-4 mt-4 align-self-end h-100 mw-100"
       style={{ backgroundColor: "#ffff", borderRadius: "20px" }}
     >
       <h3 className="fw-bold mb-4">Book a car</h3>
+      {/* book car form */}
       <form
         key={1}
         onSubmit={handleSubmit(onSubmit)}
