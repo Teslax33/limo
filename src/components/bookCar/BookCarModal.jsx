@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -14,12 +14,16 @@ export default function BookCarModal({ userData }) {
     formState: { errors: errors2 },
   } = useForm();
 
-  const { show, setShow } = useContext(CarContext);
+  const { show, setShow, isReserve, setIsReserve } = useContext(CarContext);
 
+  // function to close modal
   const handleClose = () => setShow(false);
 
+  
   const onSubmitInfo = (data) => {
-    alert(JSON.stringify(data));
+    // alert(JSON.stringify(data));
+    setIsReserve(true);
+    setShow(false);
   };
 
   //display based on value name show car img
@@ -108,6 +112,7 @@ export default function BookCarModal({ userData }) {
         <div className="checkout-personal-info py-5">
           <Container>
             <h5 className="fw-bold primary-color">PERSONAL INFORMATION</h5>
+           
             {/* form personal information */}
             <form key={2} onSubmit={handleSubmit2(onSubmitInfo)}>
               <Row className="gy-3">
