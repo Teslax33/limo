@@ -3,6 +3,8 @@ import Button from "react-bootstrap/Button";
 import { useForm } from "react-hook-form";
 import { CarContext } from "../../App";
 import BookCarModal from "./BookCarModal";
+import "./BookCarModal.css";
+import { IoMdClose } from "react-icons/io";
 
 export default function BookCar() {
   const {
@@ -11,14 +13,15 @@ export default function BookCar() {
     formState: { errors },
   } = useForm();
 
-  const { setShow } = useContext(CarContext);
+  // destructuring state variables from Context API
+  const { setShow, isReserve, setIsReserve } = useContext(CarContext);
   const [pickUpData, setPickUpData] = useState({});
 
   // store data validate from form and display modal
   const onSubmit = (data) => {
     setPickUpData(data);
     setShow(true);
-  }
+  };
 
   return (
     <div
@@ -32,6 +35,7 @@ export default function BookCar() {
         onSubmit={handleSubmit(onSubmit)}
         className="d-flex flex-column gap-2"
       >
+        {/* handle error of an inputField */}
         {(errors.carType ||
           errors.pickUp ||
           errors.dropOff ||
@@ -40,6 +44,14 @@ export default function BookCar() {
           <span className="error-message border-1 px-2 py-1 rounded border border-white fw-bold">
             This field is required
           </span>
+        )}
+
+        {/* display sucess message on placing order on modal */}
+        {isReserve && (
+          <p className="p-2 bg-sucesss mb-0 rounded">
+            Check your email to confirm an order.{" "}
+            <IoMdClose onClick={() => setIsReserve(!isReserve)} />
+          </p>
         )}
         <select
           {...register("carType", { required: true })}
