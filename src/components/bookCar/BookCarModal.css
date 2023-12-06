@@ -11,3 +11,9 @@
 .checkout-info-box{
     background-color: #f8ffec;
 }
+.bg-sucesss{
+    background-color: #c3fabe;
+    color: #2a6817;
+    border: 1px solid transparent;
+    /* border-radius: 5px; */
+}
