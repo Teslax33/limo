@@ -1,5 +1,8 @@
 import { useState, createContext } from "react";
 import Home from "./pages/Home";
+import { Route, Routes } from "react-router-dom";
+import NavbarNav from "./components/NavbarNav";
+import Vehicles from "./pages/Vehicles";
 
 export const CarContext = createContext("");
 
@@ -9,7 +12,14 @@ export default function App() {
 
   return (
     <CarContext.Provider value={{ show, setShow, isReserve, setIsReserve }}>
-      <Home />
+    <NavbarNav />
+    <Routes>
+      <Route index path="/" element={<Home />} />
+      <Route path="/vehicles" element={<Vehicles/>} />
+      {/* <Route path="/blog" /> */}
+      {/* <Route path="/contacts" /> */}
+    </Routes>
+      
     </CarContext.Provider>
   );
 }
