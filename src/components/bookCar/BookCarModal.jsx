@@ -19,7 +19,6 @@ export default function BookCarModal({ userData }) {
   // function to close modal
   const handleClose = () => setShow(false);
 
-  
   const onSubmitInfo = (data) => {
     // alert(JSON.stringify(data));
     setIsReserve(true);
