@@ -2,6 +2,12 @@
 * {
   font-family: Poppins;
 }
+.primary-color {
+  color: #99c157;
+}
+.sec-color{
+  color: #386641;
+}
 /* navbar */
 .navbar-toggler {
   border: none;
