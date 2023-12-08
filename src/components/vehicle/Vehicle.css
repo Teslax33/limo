@@ -1,0 +1,10 @@
+.vehicle-banner{
+    background-image: url("../../assets/Images/vehicle/book-banner.png");
+} 
+.banner-overlay{
+    background-color: #2d2d2d;
+    opacity: .89;
+}
+.banner-content{
+    color: #fff;
+}
