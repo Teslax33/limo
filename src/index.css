@@ -85,3 +85,22 @@
 .modal-body{
   border-bottom:1px solid #dee2e6;
 }
+
+/* breadcrumb */
+
+.hero-breadcrumb{
+  background-image: url("../src/assets/Images/vehicle/heroes-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 15rem;
+  position: relative;
+}
+.breadcrumb-overlay{
+  position: absolute;
+  background-color: hsla(0,0%,100%,.92);
+  opacity: .70;
+  width: 100%;
+  height: 100%;
+}
