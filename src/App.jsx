@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import NavbarNav from "./components/NavbarNav";
 import Vehicles from "./pages/Vehicles";
 import Newsletter from "./components/service/Newsletter";
+import Contacts from "./pages/Contacts";
 
 export const CarContext = createContext("");
 
@@ -18,7 +19,7 @@ export default function App() {
       <Route index path="/" element={<Home />} />
       <Route path="/vehicles" element={<Vehicles/>} />
       {/* <Route path="/blog" /> */}
-      {/* <Route path="/contacts" /> */}
+      <Route path="/contacts" element={<Contacts />} />
     </Routes>
     <Newsletter />
     </CarContext.Provider>
