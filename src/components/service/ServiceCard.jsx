@@ -1,5 +1,6 @@
 import Button from "react-bootstrap/esm/Button";
 import "./Service.css";
+import { Link } from "react-router-dom";
 
 export default function ServiceCard({ title, description, img }) {
   return (
@@ -15,7 +16,16 @@ export default function ServiceCard({ title, description, img }) {
       <div className="service-content">
         <h3 className="sub-heading fw-bold">{title}</h3>
         <p>{description}</p>
-        <Button variant="dark">Read More</Button>
+        <Button
+          variant="dark"
+          as={Link}
+          to="/blog"
+          onClick={() => {
+            window.screenTop(0, 0);
+          }}
+        >
+          Read More
+        </Button>
       </div>
     </div>
   );
