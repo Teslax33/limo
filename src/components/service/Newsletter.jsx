@@ -37,12 +37,13 @@ export default function Newsletter() {
               <div className="subscribe mt-5">
                 <span>Subscribe to the newsletter</span>
                 <div
-                  className="newsletter-inputField position-relative mt-2"
-                  style={{ maxWidth: "65%" }}
+                  className="newsletter-inputField position-relative my-2 "
+                  style={{ maxWidth: "75%" }}
                 >
                   <input
                     type="email"
                     name="email"
+                    id="newsemail"
                     placeholder="Email.."
                     className="newsletter-input rounded border-0 py-2 px-3 w-100"
                   />
