@@ -1,5 +1,5 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { FiPhone, FiMail,FiNavigation  } from "react-icons/fi";
+import { FiPhone, FiMail,FiNavigation, FiSend  } from "react-icons/fi";
 
 export default function ContactUs() {
   return (
@@ -64,7 +64,8 @@ export default function ContactUs() {
                   rows="10"
                   className="bookcar-inputField border-0 p-2"
                 ></textarea>
-                <Button variant="dark" size="lg">
+                <Button variant="dark" size="lg" type="submit">
+                <FiSend className="mx-2" />
                   Send Message
                 </Button>
               </form>
