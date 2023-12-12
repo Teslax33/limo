@@ -1,27 +1,27 @@
 .pick-description {
-    width: 15rem;
-  }
-  .pick-description-price{
-    background-color: #b4d47f;
-    border: 2px solid #b4d47f;
-  }
-  .pick-description-table {
-    display: grid;
-    font-size: 0.8rem;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    border: 2px solid #706f7b;
-  }
-  .pick-description-table-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    padding: 0.5rem 0.2rem;
-    text-align: center;
-  }
-  .pick-description-table-col:not(:last-child) {
-    border-bottom: 2px solid #706f7b;
-  }
-  .pick-description-table-col span:first-child {
-    border-right: 2px solid #706f7b;
-  }
+  width: 15rem;
+}
+.pick-description-price {
+  background-color: #b4d47f;
+  border: 2px solid #b4d47f;
+}
+.pick-description-table {
+  display: grid;
+  font-size: 0.8rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  border: 2px solid #706f7b;
+}
+.pick-description-table-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  padding: 0.5rem 0.2rem;
+  text-align: center;
+}
+.pick-description-table-col:not(:last-child) {
+  border-bottom: 2px solid #706f7b;
+}
+.pick-description-table-col span:first-child {
+  border-right: 2px solid #706f7b;
+}

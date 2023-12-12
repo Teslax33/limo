@@ -14,7 +14,7 @@ export default function PickCarBox({ data }) {
                 </div>
               </Col>
               <Col md="4">
-                <div className="pick-description">
+                <div className="pick-description w-100">
                   <div className="pick-description-price py-2">
                     <span>${car.price}</span>/ rent per day
                   </div>
@@ -55,10 +55,7 @@ export default function PickCarBox({ data }) {
                     </div>
                   </div>
                   {/* btn cta */}
-                  <a
-                    className="btn btn-dark w-100 rounded-0 mt-2"
-                    href="#booking-section"
-                  >
+                  <a className="btn btn-dark w-100 rounded-0 mt-2" href="/">
                     Reserve Now
                   </a>
                 </div>
