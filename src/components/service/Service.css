@@ -1,3 +1,15 @@
 .service-card{
     background-color: #f4f4f4;
 }
+
+@media  (max-width: 772px) {
+    .service-card{
+        flex-direction: column;
+    }
+    .service-card .service-img img{
+        max-width: 100% !important;
+    }
+    .service-content p{
+        font-size: 0.8rem;
+    }
+}
