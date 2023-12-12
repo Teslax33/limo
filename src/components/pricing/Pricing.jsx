@@ -15,17 +15,14 @@ export default function Pricing() {
         </div>
 
         {/* pricing main */}
-        <div
-          className="pricing-main p-5"
-         
-        >
+        <div className="pricing-main p-5">
           <Row>
             <Col lg="6">
               <div className="pricing-details">
                 <h2 className="mb-4">Cadillac Escalade</h2>
                 <div className="list">
                   <Row>
-                    <Col lg="6">
+                    <Col md="6">
                       <ul className="car-feature-list list-unstyled">
                         <li>
                           <span className="fw-bold">&#10003;</span> For Upto 8
@@ -46,7 +43,7 @@ export default function Pricing() {
                       </ul>
                     </Col>
 
-                    <Col lg="6">
+                    <Col md="6">
                       <ul className="car-feature-list list-unstyled">
                         <li>
                           <span className="fw-bold">&#10003;</span> Tinted
@@ -73,7 +70,7 @@ export default function Pricing() {
                 </div>
               </div>
             </Col>
-            <Col lg="6">
+            <Col lg="6" className="d-none d-md-block">
               <img
                 src={PricingImg}
                 alt=""
