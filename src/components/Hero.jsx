@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <div className="hero py-5 w-100 h-100">
       <Container>
-        <div className="background position-relative px-5 mt-2 w-100">
+        <div className="background position-relative px-5 mt-4 w-100">
           <img
             src={backgroundImg}
             alt="hero image"
